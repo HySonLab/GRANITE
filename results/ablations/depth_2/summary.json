@@ -1,0 +1,19 @@
+{
+  "initial": {
+    "loss": 22.92358250088162,
+    "edge_bce": 2.6994970297185574,
+    "accuracy": 0.49088453747467925,
+    "valid_edges": 2962
+  },
+  "best": {
+    "loss": 3.77762549718221,
+    "edge_bce": 0.44854770585703413,
+    "accuracy": 0.7704253882511817,
+    "valid_edges": 2962
+  },
+  "best_epoch": 86,
+  "epochs_run": 100,
+  "training_graphs": 720,
+  "validation_graphs": 180,
+  "seconds": 9.180453203152865
+}

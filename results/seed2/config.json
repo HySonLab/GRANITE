@@ -1,0 +1,13 @@
+{
+  "seed": 2,
+  "width": 16,
+  "layers": 3,
+  "loss": "hybrid",
+  "lambda": 0.5,
+  "temperature": 0.1,
+  "lr": 0.001,
+  "batch_size": 32,
+  "epochs": 100,
+  "patience": 20,
+  "gradient_clip": 10.0
+}

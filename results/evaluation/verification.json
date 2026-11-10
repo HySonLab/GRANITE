@@ -1,0 +1,10 @@
+{
+  "classification_rows_verified": 252,
+  "checkpoint_hashes_verified": 14,
+  "status": "passed",
+  "exact_training_and_validation_labels_recomputed": 900,
+  "solution_traces_verified": 2670,
+  "csv_rows_verified": 2640,
+  "original_test_exact_oracles_recomputed": 18,
+  "distinct_reduced_exact_oracles_recomputed": 1327
+}

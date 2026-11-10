@@ -1,0 +1,19 @@
+{
+  "python": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:16:10) [GCC 11.2.0]",
+  "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.39",
+  "logical_cpus": 28,
+  "device": "CPU",
+  "cuda_available": false,
+  "threads": 1,
+  "packages": {
+    "torch": "2.15.0+cpu",
+    "numpy": "2.3.5",
+    "networkx": "3.5",
+    "matplotlib": "3.10.6",
+    "pytest": "8.4.2"
+  },
+  "date": "2026-11-10",
+  "paper_doi": "10.1609/aaai.v39i11.33235",
+  "paper_sha256": "f3506b7faaf78d7e70039ecc0e6032bf1855816d937cfe9b60c172696c7091e0",
+  "note": "Main seeds trained concurrently; ablations sequential; final evaluation uses completed frozen checkpoints. No QPU or commercial solver used."
+}

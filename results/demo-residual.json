@@ -1,0 +1,33 @@
+{
+  "energy_convention": "sum_{i<j} J[i,j]*s[i]*s[j] + sum_i h[i]*s[i] + offset",
+  "linear": [
+    -0.0,
+    -0.0
+  ],
+  "quadratic": [
+    [
+      0,
+      1,
+      -0.2
+    ]
+  ],
+  "offset": -0.7,
+  "residual_vertex_order": [
+    0,
+    3
+  ],
+  "contraction_trace": [
+    [
+      1,
+      2,
+      1
+    ],
+    [
+      0,
+      1,
+      -1
+    ]
+  ],
+  "auxiliary_node_used": true,
+  "original_physical_spins": 3
+}
