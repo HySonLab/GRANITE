@@ -1,1 +1,1 @@
-"""Independent, supervised GRANITE reproduction; no RELIC dependency."""
+"""Independent, supervised GRANITE reproduction."""

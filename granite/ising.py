@@ -8,7 +8,7 @@ class Ising:
     """E(s) = -sum_{i<j} J[i,j]s[i]s[j] - h@s + offset.
 
     Positive coupling favors alignment. J is symmetric; count each edge once.
-    This follows GRANITE's minus-sign convention, unlike the RELIC repository.
+    This follows GRANITE's minus-sign convention.
     """
     J: np.ndarray
     h: np.ndarray

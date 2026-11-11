@@ -8,7 +8,7 @@ A student-friendly, independent reproduction of **GRANITE**, the method in Co Tr
 
 Start with the [measured results](results/evaluation/REPORT.md). Code, exactly labeled training/validation graphs, eleven trained models, initial/best/final checkpoints, raw test instances, contraction traces, reconstructed spins, CSVs, and plots are included.
 
-## 1. The idea, and how it differs from RELIC
+## 1. The idea
 
 An Ising problem assigns a spin −1 or +1 to each vertex. GRANITE learns whether two neighboring spins agree or disagree **at the global minimum of the energy**. If the prediction is correct, the two variables can be combined into one without losing the optimal energy. Repeating this process produces a smaller problem that can be given to another solver.
 
@@ -21,9 +21,7 @@ New graph → score edges → contract one edge → score the changed graph agai
           → stop at target size → solve residual problem → reconstruct spins
 ```
 
-GRANITE is a **supervised classifier**, not a reinforcement-learning policy. RELIC learns compression decisions from terminal rewards; GRANITE learns edge alignment from exact labels and stops at a configurable partial reduction. It is therefore useful to study them together, but their training objectives and inference pipelines should not be confused.
-
-This package is standalone: it does not import or require the RELIC repository.
+GRANITE is a **supervised classifier** that learns edge alignment from exact ground-state labels. During inference, it repeatedly predicts alignments and contracts edges until the graph reaches the requested size. A separate solver then solves the residual problem, and the recorded contractions recover the original spins.
 
 ## 2. Quick start
 
@@ -137,7 +135,7 @@ We follow the paper's **negative-sign** Hamiltonian, counting each undirected ed
 E(s) = -sum_{i<j} J[i,j]*s[i]*s[j] - sum_i h[i]*s[i] + offset.
 ```
 
-`J` is symmetric with zero diagonal. The implementation uses `-0.5*s @ J @ s` to avoid double counting. A positive coupling favors equal spins; a negative coupling favors opposite spins. **This convention is opposite to the positive-sign convention in the RELIC reproduction.** Converting between them requires negating `J` and `h`, not the offset.
+`J` is symmetric with zero diagonal. The implementation uses `-0.5*s @ J @ s` to avoid double counting. A positive coupling favors equal spins; a negative coupling favors opposite spins. To export to a solver using the positive-sign convention `sum J*s*s + sum h*s + offset`, negate `J` and `h` while keeping the offset unchanged.
 
 A contraction imposes `s[v] = d*s[u]`, with `d=+1` for merge and `d=-1` for flip-merge. Substituting gives:
 
